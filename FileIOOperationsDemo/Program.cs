@@ -9,7 +9,8 @@ namespace FileIOOperationsDemo
         {
             string filePath = @"D:\tvstraining\FileIOOperationsDemo\FileIOOperationsDemo\SampleData.txt";
             //FileExists(filePath);
-            ReadLineByLine(filePath);
+            //ReadLineByLine(filePath);
+            ReadDataAtOnce(filePath);
         }
         /// <summary>
         /// Checking File Exists or Not
@@ -54,6 +55,23 @@ namespace FileIOOperationsDemo
                     }
                 }
                 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        public static void ReadDataAtOnce(string filePath)
+        {
+            try
+            {
+                if (FileExists(filePath))
+                {
+                    string line = File.ReadAllText(filePath);
+                    Console.WriteLine(line);
+                }
+
             }
             catch (Exception ex)
             {
