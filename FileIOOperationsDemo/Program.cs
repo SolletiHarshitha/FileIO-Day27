@@ -163,16 +163,12 @@ namespace FileIOOperationsDemo
         {
             try
             {
-                if (FileExists(filePath))
+                using (StreamWriter sw = File.AppendText(filePath))
                 {
-                    using (StreamWriter sw = File.AppendText(filePath))
-                    {
-                        sw.WriteLine("\nHello world - .Net is awesome");
-                        sw.Close();
-                    }
-                    ReadDataFromStream(filePath);
+                    sw.WriteLine("\nHello world - .Net is awesome");
+                    sw.Close();
                 }
-
+                ReadDataFromStream(filePath);
             }
             catch (Exception ex)
             {
