@@ -162,7 +162,7 @@ namespace FileIOOperationsDemo
         public static void WriteDataInToStream(string filePath)
         {
             try
-            {
+            { 
                 using (StreamWriter sw = File.AppendText(filePath))
                 {
                     sw.WriteLine("\nHello world - .Net is awesome");
