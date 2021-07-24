@@ -11,7 +11,8 @@ namespace FileIOOperationsDemo
             //FileExists(filePath);
             //ReadLineByLine(filePath);
             //ReadDataAtOnce(filePath);
-            CopyFileFromSouceToDestination(filePath);
+            //CopyFileFromSouceToDestination(filePath);
+            DeleteFile();
         }
         /// <summary>
         /// Checking File Exists or Not
@@ -96,6 +97,26 @@ namespace FileIOOperationsDemo
                 if (FileExists(sourceFile))
                 {
                     File.Copy(sourceFile,destinationFile);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Delete an existing file
+        /// </summary>
+        public static void DeleteFile()
+        {
+            string destinationFile = @"D:\tvstraining\FileIOOperationsDemo\FileIOOperationsDemo\NewSampleData.txt";
+            try
+            {
+                if (FileExists(destinationFile))
+                {
+                    File.Delete(destinationFile);
                 }
 
             }
