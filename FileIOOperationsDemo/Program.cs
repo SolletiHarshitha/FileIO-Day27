@@ -12,7 +12,8 @@ namespace FileIOOperationsDemo
             //ReadLineByLine(filePath);
             //ReadDataAtOnce(filePath);
             //CopyFileFromSouceToDestination(filePath);
-            DeleteFile();
+            //DeleteFile();
+            ReadDataFromStream(filePath);
         }
         /// <summary>
         /// Checking File Exists or Not
@@ -117,6 +118,33 @@ namespace FileIOOperationsDemo
                 if (FileExists(destinationFile))
                 {
                     File.Delete(destinationFile);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Reading data from Stream Reader
+        /// </summary>
+        /// <param name="filePath"></param>
+        public static void ReadDataFromStream(string filePath)
+        {
+            try
+            {
+                if (FileExists(filePath))
+                {
+                    string line = " ";
+                    using (StreamReader sr = File.OpenText(filePath))
+                    {
+                        while((line=sr.ReadLine())!=null)
+                        {
+                            Console.WriteLine(line);
+                        }
+                    }
                 }
 
             }
