@@ -13,7 +13,8 @@ namespace FileIOOperationsDemo
             //ReadDataAtOnce(filePath);
             //CopyFileFromSouceToDestination(filePath);
             //DeleteFile();
-            ReadDataFromStream(filePath);
+            //ReadDataFromStream(filePath);
+            WriteDataInToStream(filePath);
         }
         /// <summary>
         /// Checking File Exists or Not
@@ -145,6 +146,31 @@ namespace FileIOOperationsDemo
                             Console.WriteLine(line);
                         }
                     }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Writing Data using Stream Writer
+        /// </summary>
+        /// <param name="filePath"></param>
+        public static void WriteDataInToStream(string filePath)
+        {
+            try
+            {
+                if (FileExists(filePath))
+                {
+                    using (StreamWriter sw = File.AppendText(filePath))
+                    {
+                        sw.WriteLine("\nHello world - .Net is awesome");
+                        sw.Close();
+                    }
+                    ReadDataFromStream(filePath);
                 }
 
             }
