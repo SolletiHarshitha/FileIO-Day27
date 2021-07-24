@@ -10,7 +10,8 @@ namespace FileIOOperationsDemo
             string filePath = @"D:\tvstraining\FileIOOperationsDemo\FileIOOperationsDemo\SampleData.txt";
             //FileExists(filePath);
             //ReadLineByLine(filePath);
-            ReadDataAtOnce(filePath);
+            //ReadDataAtOnce(filePath);
+            CopyFileFromSouceToDestination(filePath);
         }
         /// <summary>
         /// Checking File Exists or Not
@@ -74,6 +75,27 @@ namespace FileIOOperationsDemo
                 {
                     string line = File.ReadAllText(filePath);
                     Console.WriteLine(line);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Copy the contents from source file to destination file
+        /// </summary>
+        /// <param name="sourceFile"></param>
+        public static void CopyFileFromSouceToDestination(string sourceFile)
+        {
+            string destinationFile= @"D:\tvstraining\FileIOOperationsDemo\FileIOOperationsDemo\NewSampleData.txt";
+            try
+            {
+                if (FileExists(sourceFile))
+                {
+                    File.Copy(sourceFile,destinationFile);
                 }
 
             }
