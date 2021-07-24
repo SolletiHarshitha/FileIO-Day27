@@ -62,6 +62,10 @@ namespace FileIOOperationsDemo
             }
         }
 
+        /// <summary>
+        /// Read Data At Once
+        /// </summary>
+        /// <param name="filePath"></param>
         public static void ReadDataAtOnce(string filePath)
         {
             try
