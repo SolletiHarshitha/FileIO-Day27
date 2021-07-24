@@ -10,6 +10,10 @@ namespace FileIOOperationsDemo
             string filePath = @"D:\tvstraining\FileIOOperationsDemo\FileIOOperationsDemo\SampleData.txt";
             FileExists(filePath);
         }
+        /// <summary>
+        /// Checking File Exists or Not
+        /// </summary>
+        /// <param name="filePath"></param>
         public static void FileExists(string filePath)
         {
             try
