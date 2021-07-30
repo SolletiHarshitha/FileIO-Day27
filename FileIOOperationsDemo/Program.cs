@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FileIOOperations;
+using System;
 using System.IO;
 
 namespace FileIOOperationsDemo
@@ -18,7 +19,9 @@ namespace FileIOOperationsDemo
             //Binary.Serialization();
             //Binary.Deserialization();
             //Json.Serialization();
-            Json.Deserialization();
+            //Json.Deserialization();
+            //Xml.Serialization();
+            Xml.Deserialization();
         }
         /// <summary>
         /// Checking File Exists or Not
