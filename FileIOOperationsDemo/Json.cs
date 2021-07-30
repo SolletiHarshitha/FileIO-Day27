@@ -15,11 +15,11 @@ namespace FileIOOperationsDemo
             try
             {
                 string path = @"D:\tvstraining\FileIOOperationsDemo\FileIOOperationsDemo\JsonData.json";
-                Contact contact = new Contact() { Id = 101, FirstName = "Kavitha", LastName = "P" };
+                Contact contact = new Contact();
                 string res = JsonConvert.SerializeObject(contact);
-                File.WriteAllText(path,res);
+                File.WriteAllText(path, res);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -30,12 +30,12 @@ namespace FileIOOperationsDemo
             try
             {
                 string path = @"D:\tvstraining\FileIOOperationsDemo\FileIOOperationsDemo\JsonData.json";
-                string res=File.ReadAllText(path);
+                string res = File.ReadAllText(path);
                 Contact result = JsonConvert.DeserializeObject<Contact>(res);
                 if (result != null)
                 {
                     Console.WriteLine("Person Details : ");
-                    Console.WriteLine("Id : {0}\tFirstName : {1}\tLastName : {2}", result.Id, result.FirstName,result.LastName);
+                    Console.WriteLine("Id : {0}\tFirstName : {1}\tLastName : {2}", result.Id, result.FirstName, result.LastName);
                 }
                 else
                     Console.WriteLine("No Person Details");
@@ -45,12 +45,12 @@ namespace FileIOOperationsDemo
                 Console.WriteLine(ex.Message);
             }
         }
-
-        public class Contact
-        {
-            public int Id { get; set; } 
-            public string FirstName { get; set; } 
-            public string LastName { get; set; } 
-        }
+    }
+    
+    public class Contact
+    {
+        public int Id { get; set; } = 101;
+        public string FirstName { get; set; } = "Kavitha";
+        public string LastName { get; set; } = "P";
     }
 }
