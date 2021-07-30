@@ -14,7 +14,9 @@ namespace FileIOOperationsDemo
             //CopyFileFromSouceToDestination(filePath);
             //DeleteFile();
             //ReadDataFromStream(filePath);
-            WriteDataInToStream(filePath);
+            //WriteDataInToStream(filePath);
+            //Binary.Serialization();
+            Binary.Deserialization();
         }
         /// <summary>
         /// Checking File Exists or Not
