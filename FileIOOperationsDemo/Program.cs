@@ -16,7 +16,9 @@ namespace FileIOOperationsDemo
             //ReadDataFromStream(filePath);
             //WriteDataInToStream(filePath);
             //Binary.Serialization();
-            Binary.Deserialization();
+            //Binary.Deserialization();
+            //Json.Serialization();
+            Json.Deserialization();
         }
         /// <summary>
         /// Checking File Exists or Not
